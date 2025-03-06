@@ -17,6 +17,12 @@ inputs:
 runs:
   using: 'composite'
   steps:
+    - name: Setup Spring Repo
+      run: ${{ github.action_path }}/setup-spring-ent-repo.sh
+      shell: bash
+      env:
+        ARTIFACTORY_TOKEN: ${{ inputs.artifactory_token }}
+        EMAIL: ${{ inputs.email }}  
     - name: Run App Advisor
       run: ${{ github.action_path }}/app-advisor.sh
       shell: bash
