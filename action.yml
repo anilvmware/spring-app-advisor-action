@@ -14,6 +14,9 @@ inputs:
   git_token:
     description: 'Authentication token for generating pull requests against repo'
     required: true
+  email:
+    description: 'Email to login to spring enterprise server'
+    required: true
 runs:
   using: 'composite'
   steps:
